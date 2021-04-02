@@ -1,0 +1,9 @@
+@posts.map do |post| {
+  id: post.id,
+  title: post.title,
+  content: post.content,
+  user_id: post.user_id,
+  votes: post.votes
+}
+
+end
