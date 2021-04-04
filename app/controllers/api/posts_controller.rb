@@ -9,6 +9,15 @@ class Api::PostsController < ApplicationController
     render 'show.json.jb'
   end
 
+  def create
+    @post = Post.new(
+      title = params[:title],
+      content = params[:content],
+      user_id = params[:user_id],
+      votes = params[:votes],
+    )
+    render 'show;json.jb'
+  end
 end
 
 
