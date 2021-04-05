@@ -11,12 +11,13 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(
-      title = params[:title],
-      content = params[:content],
-      user_id = params[:user_id],
-      votes = params[:votes],
+      title: params[:title],
+      content: params[:content],
+      user_id: params[:user_id],
+      votes: params[:votes],
     )
-    render 'show;json.jb'
+    @post.save
+    render 'show.json.jb'
   end
 end
 
