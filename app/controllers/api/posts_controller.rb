@@ -19,6 +19,17 @@ class Api::PostsController < ApplicationController
     @post.save
     render 'show.json.jb'
   end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.title = params[:title] || @post.title
+    @post.content = params[:content] || @post.content
+    if @post.save
+      render 'show.json.jb'
+    else
+      render json: {errors: @post.errors.full_messages}, status: :bad_request
+    end
+  end
 end
 
 
