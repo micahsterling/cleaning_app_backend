@@ -24,6 +24,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title] || @post.title
     @post.content = params[:content] || @post.content
+    @post.user_id = params[:user_id] || @post.user_id
     if @post.save
       render 'show.json.jb'
     else

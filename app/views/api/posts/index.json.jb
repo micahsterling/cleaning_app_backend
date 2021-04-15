@@ -5,5 +5,4 @@
   user_id: post.user_id,
   votes: post.votes
 }
-
 end
