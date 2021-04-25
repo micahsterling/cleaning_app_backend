@@ -13,15 +13,15 @@
 # post = Post.new(title: "How to clean your bathtub", content: "clean using some tide and a soft bristled brush")
 # post.save
 
-# catagoy = Catagory.new(catagory: "Kitchen",)
-# catagoy.save
-# catagoy = Catagory.new(catagory: "Bedroom",)
-# catagoy.save
-# catagoy = Catagory.new(catagory: "Bathroom",)
-# catagoy.save
-# catagoy = Catagory.new(catagory: "Living Room",)
-# catagoy.save
-# catagoy = Catagory.new(catagory: "Laundry",)
-# catagoy.save
+# categoy = Category.new(category: "Kitchen",)
+# categoy.save
+# categoy = Category.new(category: "Bedroom",)
+# categoy.save
+# categoy = Category.new(category: "Bathroom",)
+# categoy.save
+# categoy = Category.new(category: "Living Room",)
+# categoy.save
+# categoy = Category.new(category: "Laundry",)
+# categoy.save
 
 p "complete"

@@ -1,1 +1,5 @@
-"test"
+@categories.map do |category| {
+id: category.id,
+category: category.category,
+}
+end
