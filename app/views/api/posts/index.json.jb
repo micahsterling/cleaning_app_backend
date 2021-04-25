@@ -3,6 +3,7 @@
   title: post.title,
   content: post.content,
   user_id: post.user_id,
+  category_id: post.category_id,
   votes: post.votes
 }
 end
