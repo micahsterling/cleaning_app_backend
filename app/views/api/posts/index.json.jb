@@ -4,6 +4,7 @@
   content: post.content,
   user_id: post.user_id,
   category_id: post.category_id,
+  # categories: post.name,
   votes: post.votes
 }
 end

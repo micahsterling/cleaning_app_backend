@@ -14,6 +14,7 @@ class Api::PostsController < ApplicationController
       title: params[:title],
       content: params[:content],
       user_id: params[:user_id],
+      category_id: params[:category_id],
       votes: params[:votes],
     )
     @post.save
@@ -25,6 +26,7 @@ class Api::PostsController < ApplicationController
     @post.title = params[:title] || @post.title
     @post.content = params[:content] || @post.content
     @post.user_id = params[:user_id] || @post.user_id
+    @post.category_id = params[:category_id] || @post.category_id
     if @post.save
       render 'show.json.jb'
     else
