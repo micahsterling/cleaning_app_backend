@@ -4,5 +4,6 @@
   content: @post.content,
   user_id: @post.user_id,
   category_id: @post.category_id,
+  category: @post.category,
   votes: @post.votes,
 }
