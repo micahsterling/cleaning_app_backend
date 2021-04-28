@@ -5,5 +5,6 @@
   user_id: @post.user_id,
   category_id: @post.category_id,
   category: @post.category,
+  tag_ids: @post.tag_ids,
   votes: @post.votes,
 }
