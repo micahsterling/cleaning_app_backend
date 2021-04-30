@@ -15,10 +15,13 @@ class Api::PostsController < ApplicationController
       content: params[:content],
       user_id: params[:user_id],
       category_id: params[:category_id],
-      tag_id: params[:tag_id],
       votes: params[:votes],
     )
     @post.save
+    params[:tag_ids].each do |tag_id|
+      posttag = PostTag.new(post_id: @post.id, tag_id: tag_id[:id] )
+      posttag.save 
+    end
     render 'show.json.jb'
   end
 
@@ -34,6 +37,7 @@ class Api::PostsController < ApplicationController
     else
       render json: {errors: @post.errors.full_messages}, status: :bad_request
     end
+    
   end
 
   def destroy
