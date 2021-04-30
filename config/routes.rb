@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     get "/categories" => "categories#index"
+    
+    get "/tags" => "tags#index"
   end
 end
