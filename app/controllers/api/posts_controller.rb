@@ -10,12 +10,14 @@ class Api::PostsController < ApplicationController
   end
 
   def create
+    p "current_user"
+    p current_user.id
+    p "current_user"
     @post = Post.new(
       title: params[:title],
       content: params[:content],
-      user_id: params[:user_id],
+      user_id: current_user.id,
       category_id: params[:category_id],
-      votes: params[:votes],
     )
     @post.save
     params[:tag_ids].each do |tag_id|
@@ -29,7 +31,6 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title] || @post.title
     @post.content = params[:content] || @post.content
-    @post.user_id = params[:user_id] || @post.user_id
     @post.category_id = params[:category_id] || @post.category_id
     @post.tag_ids = params[:tag_ids] || @post.tag_ids
     if @post.save
