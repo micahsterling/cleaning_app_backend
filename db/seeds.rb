@@ -107,4 +107,11 @@
 # tag = Tag.new(name: "freezer")
 # tag.save
 
+# Product.new(name:"kosher salt", post_id: 12, image: "https://i5.walmartimages.com/asr/5df4b8a2-fcda-400a-abc3-7fd6a447f189_2c8cb38a8cb329535a3d255f66b856e67.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff")
+# product.save
+# product = Product.new(name: "Mr Clean MagicEraser", post_id: 24, image: "https://images.albertsons-media.com/is/image/ABS/960505854$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available")
+# product.save
+# product = Product.new(name: "Bar Keepers Friend", post_id: 26, image: "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:ecoc_fit,w_730,h_749/k%2Farchive%2Fed99de31f3f3353f64f331fe8f3a77d69ab513b6")
+#   product.save
+
 p "complete"

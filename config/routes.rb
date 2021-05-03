@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "/posts/:id" => "posts#show"
     post "/posts/" => "posts#create"
     patch "/posts/:id" => "posts#update"
+    delete "/posts/:id" => "posts#destroy"
 
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
@@ -16,5 +17,7 @@ Rails.application.routes.draw do
     get "/categories" => "categories#index"
     
     get "/tags" => "tags#index"
+
+    get "/products" => "products#index"
   end
 end
