@@ -18,6 +18,7 @@ class Api::PostsController < ApplicationController
       content: params[:content],
       user_id: current_user.id,
       category_id: params[:category_id],
+      images: params[:images],
     )
     @post.save
     params[:tag_ids].each do |tag_id|
@@ -31,8 +32,10 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title] || @post.title
     @post.content = params[:content] || @post.content
+    @post.user_id = params[:user_id] || @post.user_id
     @post.category_id = params[:category_id] || @post.category_id
     @post.tag_ids = params[:tag_ids] || @post.tag_ids
+    # @post.name = params[:name] || @post.name
     if @post.save
       render 'show.json.jb'
     else

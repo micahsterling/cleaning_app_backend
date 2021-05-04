@@ -6,6 +6,7 @@
   category: post.category,
   tags: post.tags,
   votes: post.votes,
-  products: post.products
+  products: post.products,
+  images: post.images 
 }
 end
