@@ -16,9 +16,9 @@ class Api::PostsController < ApplicationController
     @post = Post.new(
       title: params[:title],
       content: params[:content],
-      user_id: current_user.id,
+      user_id: 1,
       category_id: params[:category_id],
-      images: params[:images],
+      # images: params[:images],
     )
     @post.save
     params[:tag_ids].each do |tag_id|

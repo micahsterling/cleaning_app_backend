@@ -106,6 +106,10 @@
 # tag.save
 # tag = Tag.new(name: "freezer")
 # tag.save
+# tag = Tag.new(name: "floor")
+# tag.save
+# tag = Tag.new(name: "scuffs")
+# tag.save
 
 # Product.new(name:"kosher salt", post_id: 12, image: "https://i5.walmartimages.com/asr/5df4b8a2-fcda-400a-abc3-7fd6a447f189_2c8cb38a8cb329535a3d255f66b856e67.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff")
 # product.save
