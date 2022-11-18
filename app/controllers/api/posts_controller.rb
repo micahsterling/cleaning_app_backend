@@ -10,19 +10,16 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    p "current_user"
-    p current_user.id
-    p "current_user"
-    @post = Post.new(
+    post = Post.new(
       title: params[:title],
       content: params[:content],
-      user_id: 1,
+      user_id: current_user.id,
       category_id: params[:category_id],
       # images: params[:images],
     )
-    @post.save
+    post.save
     params[:tag_ids].each do |tag_id|
-      posttag = PostTag.new(post_id: @post.id, tag_id: tag_id[:id] )
+      posttag = PostTag.new(post_id: post.id, tag_id: tag_id[:id], user_id: current_user.id )
       posttag.save 
     end
     render 'show.json.jb'
@@ -32,11 +29,21 @@ class Api::PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.title = params[:title] || @post.title
     @post.content = params[:content] || @post.content
-    @post.user_id = params[:user_id] || @post.user_id
     @post.category_id = params[:category_id] || @post.category_id
     @post.tag_ids = params[:tag_ids] || @post.tag_ids
+    p "tag ids"
+    p @post.tag_ids
+    p "cater id"
+    p @post.category_id
+    p "post"
+    p @post
     # @post.name = params[:name] || @post.name
     if @post.save
+      p "tag ids"
+      p @post.tag_ids
+      p tag_ids
+      p "cater id"
+      p @post.category_id
       render 'show.json.jb'
     else
       render json: {errors: @post.errors.full_messages}, status: :bad_request
